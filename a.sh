@@ -24,7 +24,7 @@ cd /opt/
 php gatherReport.php
 cp -r $covlog $new_covlog
 rm -rf $covlog/*
-scp -r $new_covlog/ root@10.11.91.33:/usr/local/tomcat8.0.53/webapps/ROOT/report/
+scp -r $new_covlog/ root@101.1.33:/usr/local/tomcat8.0.53/webapps/ROOT/report/
 rm -rf $new_covlog
 else
 echo "文件$file_name不存在"
@@ -33,7 +33,7 @@ cp index.php index_old.php && rm index.php
 mkdir -m 777 -p /opt/covlog
 #mkdir -m 777 -p /tmp/git && cd /tmp/git
 cd /opt
-git clone ssh://git@git.xesv5.com:10088/yanxin3/phpCodeCoverage.git
+git clone ssh://girage.git
 cp /opt/phpCodeCoverage/src/Woojean/PHPCoverage/index.php $project_path/www/
 
 #sed -i 's/\/opt\/zentaopms\/www\/index_old.php/$project_path/g'  index_old.php
