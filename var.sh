@@ -1,5 +1,5 @@
 #!/bin/bash
-#git_dir=infra.xesv5.com
+#git_d
 git_dir=$1
 echo $git_dir
 
@@ -7,10 +7,10 @@ echo $git_dir
 job_name=$2
 # if [ -d /home/www/phpCodeCoverage ];then
 # echo "git目录存在，pull"
-# git pull ssh://git@git.xesv5.com:10088/yanxin3/phpCodeCoverage.git
+
 # else
 # cd /home/www
-# git clone ssh://git@git.xesv5.com:10088/yanxin3/phpCodeCoverage.git
+
 # fi
 #------执行remote shell-----------------------------------------
 #-----拼接项目字符串---
@@ -70,7 +70,7 @@ fi
 	# rm -rf $covlog/*
 	# fi	
 	
-scp -r /home/www/phpCodeCoverage/report/ root@10.17.81.62:/usr/local/tomcat8.0.53/webapps/ROOT/
+scp -r /home/www/phpCodeCoverage/report/ root@1.7.1.62:/usr/local/tomcat8.0.53/webapps/ROOT/
 rm -rf /home/www/phpCodeCoverage/report
 #钉钉发送最新报告
 curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.81.62:8080/report/$depart/$project/$env/$time\"}}"  https://oapi.dingtalk.com/robot/send?access_token=8d1904f2ca84d7f6c18251b
