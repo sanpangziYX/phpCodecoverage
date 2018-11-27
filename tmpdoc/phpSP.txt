@@ -28,7 +28,7 @@ echo "git目录存在，删除重新clone"
 sudo rm -rf $git/phpCodeCoverage
 fi
 cd $git
-git clone ssh://git@git.xesv5.com:10088/yanxin3/phpCodeCoverage.git
+git clone ssh://n3/phpCodeCoverage.git
 sudo mkdir -m 777 -p $covlog
 #替换gatherReport的收集路径
 sudo sed -i 's#/opt/covlog#'$covlog'#g'  $git/phpCodeCoverage/src/Woojean/PHPCoverage/gatherReport.php
@@ -55,8 +55,8 @@ php gatherReport.php
 sudo sed -i 's#PHP代码覆盖率报告#'$job_name'代码覆盖率报告#g' $covlog/index.html
 sudo cp -r $covlog/*.html $new_covlog
 #sudo rm -rf $covlog/*
-sudo scp -r /tmp/report/ root@10.17.91.33:/usr/local/tomcat8.0.53/webapps/ROOT/
+sudo scp -r /tmp/report/ root@1091.33:/usr/local/tomcat8.0.53/webapps/ROOT/
 #sudo rm -rf /tmp/report
 
 #钉钉发送最新报告
-curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.91.33:8080/report/$job_name-$project_name/$time\"}}" https://oapi.dingtalk.com/robot/send?access_token=97735846e456441c7cb4fb90c9728da1c08d1904f2ca84d7f6c18402a342251b
+curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.91.33:8080/report/$job_name-$project_name/$time\"}}" https://oapi.dingtalk.com/robot/send?access_token=97735846e4564d7f6c18402a342251b
