@@ -24,7 +24,7 @@ cd /opt/
 php gatherReport.php
 cp -r $covlog $new_covlog
 rm -rf $covlog/*
-scp -r $new_covlog/ root@10.17.91.33:/usr/local/tomcat8.0.53/webapps/ROOT/report/
+scp -r $new_covlog/ root@10.11.91.33:/usr/local/tomcat8.0.53/webapps/ROOT/report/
 rm -rf $new_covlog
 else
 echo "文件$file_name不存在"
