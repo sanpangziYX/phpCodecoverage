@@ -59,4 +59,4 @@ sudo scp -r /tmp/report/ root@1091.33:/usr/local/tomcat8.0.53/webapps/ROOT/
 #sudo rm -rf /tmp/report
 
 #钉钉发送最新报告
-curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.91.33:8080/report/$job_name-$project_name/$time\"}}" https://oapi.dingtalk.com/robot/send?access_token=97735846e4564d7f6c18402a342251b
+curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.91.33:8080/report/$job_name-$project_name/$time\"}}" https://oapi.dingtalk.com/robot/send?access_token=9773584
