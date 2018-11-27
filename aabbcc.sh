@@ -72,5 +72,5 @@ fi
 scp -r /home/www/phpCodeCoverage/report/ root@10.17.81.62:/usr/local/tomcat8.0.53/webapps/ROOT/
 rm -rf /home/www/phpCodeCoverage/report
 #钉钉发送最新报告
-curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.81.62:8080/report/$depart/$project/$env/$time\"}}"  https://oapi.dingtalk.com/robot/send?access_token=97735846e456441c7cb4fb90c9728da1c08d1904f2ca84d7f6c18402a342251b
+curl -H "Content-Type:application/json;charset=utf-8" -X POST -d "{\"msgtype\":\"link\",\"link\": {\"text\":\"PHP代码覆盖率\", \"title\": \"项目名称：$job_name\n日期：$time\", \"picUrl\": \"\",\"messageUrl\": \"http://10.17.81.62:8080/report/$depart/$project/$env/$time\"}}"  https://oapi.dingtalk.com/robot/send?access_token=9773584642251b
 #fi
